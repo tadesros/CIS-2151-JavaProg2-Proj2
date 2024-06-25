@@ -8,13 +8,14 @@ package proj2;
  *
  * @author tomad
  */
-public class Proj2 {
+public class demoProj2 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
+              System.out.println("--------------------------------------------------");
     }
     
 }
