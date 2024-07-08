@@ -1,12 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package proj2;
 
 /**
- *  Enemy
- * @author tomad
+ *  Abstract Class: Enemy
+ * 
  */
  abstract class Enemy {
     
@@ -47,8 +44,6 @@ package proj2;
     public void setHeight(int height) {
         this.height = height;
     }
-    
-    
     
     
 } //end Enemy class
