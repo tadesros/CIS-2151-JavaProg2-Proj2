@@ -28,11 +28,7 @@ public class demoProj2 {
       populateEnemyArray(enemyArray);      
       
       //Print Enemy Array
-      printEnemyArray(enemyArray);
-      
-      
-    
-      
+      printEnemyArray(enemyArray);      
       
     // System.out.println(generateRandomInt(1,5));
       
@@ -68,8 +64,10 @@ public class demoProj2 {
      * @param enemyArray 
      */
     static void printEnemyArray(Enemy[] enemyArray)
-    {
-        enemyArray[1].attack();
+    {        
+         for (Enemy enemyArray1 : enemyArray) {
+             enemyArray1.attack();
+         }      
     }
     
 } //end demoProj2

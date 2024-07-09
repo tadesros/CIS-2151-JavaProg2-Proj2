@@ -5,11 +5,11 @@ package proj2;
  *  Abstract Class: Enemy
  * 
  */
- abstract class Enemy {
+ public abstract class Enemy {
     
     //Data
-    int weight;
-    int height;
+    private int weight;
+    private int height;
    
     /**
      * Constructor
@@ -22,13 +22,15 @@ package proj2;
     }
 
     /**
-     * Method: Attack
+     * Abstract Method: Attack
      */
-    abstract void  attack();
+    public abstract void attack();
     
     
     /** Getter and Setters **/
-    
+     
+    /** Get and set Weight
+     * @return  */  
     public int getWeight() {
         return weight;
     }
@@ -37,13 +39,14 @@ package proj2;
         this.weight = weight;
     }
 
+    /** Get and Set Height
+     * @return  **/    
     public int getHeight() {
         return height;
     }
 
     public void setHeight(int height) {
         this.height = height;
-    }
+    }    
     
-    
-} //end Enemy class
+} //end class Enemy
