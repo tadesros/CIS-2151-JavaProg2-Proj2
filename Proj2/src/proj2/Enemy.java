@@ -49,4 +49,4 @@ package proj2;
         this.height = height;
     }    
     
-} //end class Enemy
+} //end Enemy

@@ -9,9 +9,29 @@ package proj2;
  */
 public class demoProj2 {
 
-     //Constants
+   //Constants
      private  static final int ENEMY_ARRAY_SIZE = 100;
 
+  //GOBLIN
+     private  static final int MIN_WEIGHT_GOBLIN = 5;
+     private  static final int MAX_WEIGHT_GOBLIN = 10;
+     
+     private  static final int MIN_HEIGHT_GOBLIN = 70;
+     private  static final int MAX_HEIGHT_GOBLIN = 100;
+     
+  //GHOST
+     private  static final int GHOST_WEIGHT = 0;
+     
+     private  static final int MIN_HEIGHT_GHOST = 90;
+     private  static final int MAX_HEIGHT_GHOST = 150;
+     
+  //OGRE
+     private  static final int MIN_WEIGHT_OGRE = 120;
+     private  static final int MAX_WEIGHT_OGRE = 200;
+     
+     private  static final int MIN_HEIGHT_OGRE = 200;
+     private  static final int MAX_HEIGHT_OGRE = 300;
+    
     
     
     /**
@@ -20,17 +40,19 @@ public class demoProj2 {
     public static void main(String[] args) {   
     
                 
+      
+        
       //Declare an array of enemies of size enemy array size
-      Enemy[] enemyArray = new Enemy[ENEMY_ARRAY_SIZE];
+        Enemy[] enemyArray = new Enemy[ENEMY_ARRAY_SIZE];
       
        
       //Populate enemyArray with Enemies
-      populateEnemyArray(enemyArray);      
+        populateEnemyArray(enemyArray);      
       
       //Print Enemy Array
-      printEnemyArray(enemyArray);      
+       printEnemyArray(enemyArray);      
       
-    // System.out.println(generateRandomInt(1,5));
+       System.out.println(generateRandomInt(1,5));
       
       
     }
@@ -54,9 +76,9 @@ public class demoProj2 {
      */
     static void populateEnemyArray(Enemy[] enemyArray)
     {
-      enemyArray[0] = new Ogre(1,2);
+      enemyArray[0] = new Ogre(generateRandomInt(MIN_WEIGHT_OGRE, MAX_WEIGHT_OGRE),generateRandomInt(MIN_HEIGHT_OGRE , MAX_HEIGHT_OGRE));
       enemyArray[1] = new Goblin(1,2);
-      enemyArray[2] = new Ghost(1,2);   
+      enemyArray[2] = new Dragon(1,2);   
     }
     
     /**
