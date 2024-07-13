@@ -3,7 +3,6 @@ package proj2;
 
 /**
  *  Abstract Class: Enemy
- * 
  */
  public abstract class Enemy {
     
@@ -23,11 +22,11 @@ package proj2;
 
     /**
      * Abstract Method: Attack
-     */
+    */
     public abstract void attack();
     
     
-    /** Getter and Setters **/
+    /***** Getter and Setters *****/
      
     /** Get and set Weight
      * @return  */  
@@ -47,6 +46,6 @@ package proj2;
 
     public void setHeight(int height) {
         this.height = height;
-    }    
+    } 
     
-} //end Enemy
+}//end Enemy class

@@ -1,20 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package proj2;
 
 /**
- * Ghost Class
- * @author tomad
+ * Class Ghost
+ * Extends Class Enemy
  */
 public class Ghost extends Enemy{   
 
+    /**
+     * Constructor
+     * @param weight
+     * @param height 
+     */
     public Ghost(int weight, int height) {
         
         super(weight, height);
     }
-
+    /**
+     * Abstract Method: Attack
+     */
     @Override
     public void attack() {
       System.out.println("Boo!");

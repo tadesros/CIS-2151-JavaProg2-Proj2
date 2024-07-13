@@ -1,15 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package proj2;
 
 /**
- * @author tomad
+ * Class demoProj1
+ * This class demonstrates the use of the abstract class Enemy
+ * by creating an arrayList of Enemy objects of type Dragon,
+ * Enemy, Ghost, Goblin, Ogre.
+ * The type is randomized.
  */
 public class demoProj2 {
 
-   //Constants
+   /**Constants**/
+    
      private  static final int ENEMY_ARRAY_SIZE = 100;
 
   //GOBLIN
@@ -31,31 +33,30 @@ public class demoProj2 {
      
      private  static final int MIN_HEIGHT_OGRE = 200;
      private  static final int MAX_HEIGHT_OGRE = 300;
-    
-    
+     
+  //DRAGON
+     private  static final int MIN_WEIGHT_DRAGON = 1000;
+     private  static final int MAX_WEIGHT_DRAGON = 1500;
+     
+     private  static final int MIN_HEIGHT_DRAGON = 750;
+     private  static final int MAX_HEIGHT_DRAGON = 2000;    
     
     /**
+     * Method: Main
      * @param args the command line arguments
      */
-    public static void main(String[] args) {   
-    
-                
-      
+    public static void main(String[] args) {        
         
       //Declare an array of enemies of size enemy array size
-        Enemy[] enemyArray = new Enemy[ENEMY_ARRAY_SIZE];
-      
+        Enemy[] enemyArray = new Enemy[ENEMY_ARRAY_SIZE];     
        
-      //Populate enemyArray with Enemies
+      //Populate enemyArray with random Enemies
         populateEnemyArray(enemyArray);      
       
-      //Print Enemy Array
+      //Print all of the enemies in enemy array with attack response
        printEnemyArray(enemyArray);      
       
-       System.out.println(generateRandomInt(1,5));
-      
-      
-    }
+    } //end Main
     
     
     /**
@@ -70,19 +71,61 @@ public class demoProj2 {
       
       return randomNumber;          
     }
+    
     /**
-     * 
+     * Method: PopulateEnemyArray
      * @param enemyArray 
      */
-    static void populateEnemyArray(Enemy[] enemyArray)
+    static void populateEnemyArray(Enemy[] enemyArray)            
     {
-      enemyArray[0] = new Ogre(generateRandomInt(MIN_WEIGHT_OGRE, MAX_WEIGHT_OGRE),generateRandomInt(MIN_HEIGHT_OGRE , MAX_HEIGHT_OGRE));
-      enemyArray[1] = new Goblin(1,2);
-      enemyArray[2] = new Dragon(1,2);   
+      //Counter 
+        int i = 0;        
+        
+      do
+      {          
+      //Get a random number for the Enemy type 1 to 4   
+       int enemyType = generateRandomInt(1,4);
+          
+         switch(enemyType)
+         {
+           case 1 :
+              // Goblin 
+                enemyArray[i] = new Goblin(generateRandomInt(MIN_WEIGHT_GOBLIN, MAX_WEIGHT_GOBLIN),generateRandomInt(MIN_HEIGHT_GOBLIN , MAX_HEIGHT_GOBLIN));
+              break; 
+
+           case 2 :
+              // Ghost
+                enemyArray[i] = new Ghost(GHOST_WEIGHT,generateRandomInt(MIN_HEIGHT_GHOST , MAX_HEIGHT_GHOST));
+              break;               
+             
+           case 3 :
+              // Ogre
+                enemyArray[i] = new Ogre(generateRandomInt(MIN_WEIGHT_OGRE, MAX_WEIGHT_OGRE),generateRandomInt(MIN_HEIGHT_OGRE , MAX_HEIGHT_OGRE));
+              break;              
+           
+            case 4 :
+              // Dragon
+                 enemyArray[i] = new Dragon(generateRandomInt(MIN_WEIGHT_DRAGON, MAX_WEIGHT_DRAGON),generateRandomInt(MIN_HEIGHT_DRAGON , MAX_HEIGHT_DRAGON));
+              break;        
+           
+           
+           default : 
+              // non of above
+               System.out.println("Invalid");
+         }
+       
+    
+      
+      //Increment i
+      i++;
+      
+      }while(i < enemyArray.length);
+      
+    
     }
     
     /**
-     * 
+     * Method: Print enemy array
      * @param enemyArray 
      */
     static void printEnemyArray(Enemy[] enemyArray)
